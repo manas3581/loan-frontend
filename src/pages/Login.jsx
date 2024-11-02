@@ -83,7 +83,7 @@ const Login = () => {
   return (
     <>
       <div className="row py-5 bg-light px-2 logoUp">
-        <h4 onClick={() => navigate("/gallery")}>Dobby Ads</h4>
+        <h4 >ManBy </h4>
       </div>
       <div className="outerSignin">
         <div className="logUpper">
@@ -98,7 +98,7 @@ const Login = () => {
           ></video>
         </div>
         <div className="outerdivlog mx-5 px-4">
-          <span className="headerupperlogin">Welcome to Dobby Ads !</span>
+          <span className="headerupperlogin">Welcome to ManBy  !</span>
           <form className="row m-0 p-0 g-0" onSubmit={handleLogion}>
             <div className="emailogin">
               <TextField
