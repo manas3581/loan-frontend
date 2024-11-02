@@ -17,6 +17,7 @@ const Signup = () => {
   const [passwordError, setPasswordError] = useState("");
   const [customError, setCustomError] = useState("");
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -129,8 +130,8 @@ const Signup = () => {
           <video
             id="videoElement-1"
             src="https://fast.artivive.com/assets/uploads/2022/03/debadc9efc030d2093a265d50ccb0fd5.mp4"
-            playsinline="true"
-            autoplay="autoplay"
+            playsInline="true"
+            autoPlay="autoplay"
             loop="true"
             muted
             class="outerdivlogin"
