@@ -16,8 +16,11 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary header">
         <div className="container-fluid">
+          <div>
+            <img src="./loanApp.jpg" alt="" height={45} width={45} style={{borderRadius:"50%"}} className="mx-2"/>
+          </div>
           <Link className="navbar-brand" to="/">
-            Techdome
+            <b>ManBy </b>
           </Link>
           <button
             className="navbar-toggler"
@@ -41,12 +44,12 @@ const Navbar = () => {
             <div className="d-flex">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <span className="nav-link "> {user?.name}</span>
+                  <span className="nav-link " style={{cursor:"pointer"}}> {user?.name.slice(0, 1).toUpperCase()+user?.name.slice(1)}</span>
                 </li>
                 <li className="nav-item">
-                  <span className="nav-link " onClick={handleLogout}>
+                  <button className=" btn btn-primary" onClick={handleLogout} style={{cursor:"pointer"}}>
                     Logout
-                  </span>
+                  </button>
                 </li>
               </ul>
             </div>
