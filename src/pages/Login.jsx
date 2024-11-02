@@ -110,7 +110,7 @@ const Login = () => {
       style={{position:"absolute",top:"10px",right:"0",}}
       >
       <h1>Admin Credentials</h1>
-      <p><strong>Email:</strong> manas12345@gmail.com</p>
+      <p><strong>Email:</strong> manas12345@gmail.com </p>
       <p><strong>Password:</strong> manas12345</p>
      
 
