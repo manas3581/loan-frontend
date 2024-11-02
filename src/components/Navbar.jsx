@@ -14,7 +14,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary header">
+      {
+        user?.name && 
+<nav className="navbar navbar-expand-lg bg-body-tertiary header">
         <div className="container-fluid">
           <div>
             <img src="./loanApp.jpg" alt="" height={45} width={45} style={{borderRadius:"50%"}} className="mx-2"/>
@@ -56,6 +58,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      }
+      
     </div>
   );
 };

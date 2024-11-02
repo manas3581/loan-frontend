@@ -103,9 +103,27 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="row py-5 bg-light px-2 logoUp">
-        <h4 >ManBy </h4>
+       <div className=" py-5 bg-light px-2 logoUp"
+      style={{display:"flex",alignItems:"start",justifyContent:"space-between"}}
+      
+      >
+           <div 
+           style={{display:"flex",alignItems:"center"}}
+           > 
+            <img src="./loanApp.jpg" alt="" height={50} width={50} style={{borderRadius:"50%"}} className="mx-2"/>
+            <h4 >ManBy </h4>
+          </div>
+     
       </div>
+      <div className="adminLogin"
+      style={{position:"absolute",top:"10px",right:"0",}}
+      >
+      <h1>Admin Credentials</h1>
+      <p><strong>Email:</strong> manas12345@gmail.com</p>
+      <p><strong>Password:</strong> manas12345</p>
+     
+
+     </div>
       <div className="outerSignin">
         <div className="logUpper">
           <video
@@ -152,6 +170,9 @@ const Signup = () => {
                 variant="filled"
                 className="insidepasslog w-100"
                 onChange={(e) => setPassword(e.target.value)}
+              
+              
+              
               />
             </div>
 

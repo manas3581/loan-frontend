@@ -1,20 +1,24 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import TextField from "@mui/material/TextField";
 import axios from "axios";
-
+import { TextField, IconButton, InputAdornment } from "@mui/material";
+// import Visibility from "@mui/icons-material/Visibility";
+// import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { MdVisibility } from "react-icons/md";
+import { MdVisibilityOff } from "react-icons/md";
 import { userContext } from "../context/myContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const { setAuthenticate, setUser, setIsLogin, isLogin, isAdmin, setIsAdmin } =
     useContext(userContext);
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("manaskumar1@gmail.com");
+  const [email, setEmail] = useState("manaskumar1@gmail.com");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [isError, setIsError] = useState(false);
   const [customError, setCustomError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const handleLogion = async (e) => {
     e.preventDefault();
     setIsError(false);
@@ -80,11 +84,37 @@ const Login = () => {
       setIsLogin(false);
     }
   };
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <>
-      <div className="row py-5 bg-light px-2 logoUp">
-        <h4 >ManBy </h4>
+      <div className=" py-5 bg-light px-2 logoUp"
+      style={{display:"flex",alignItems:"start",justifyContent:"space-between"}}
+      
+      >
+           <div 
+           style={{display:"flex",alignItems:"center"}}
+           > 
+            <img src="./loanApp.jpg" alt="" height={50} width={50} style={{borderRadius:"50%"}} className="mx-2"/>
+            <h4 >ManBy </h4>
+          </div>
+   
       </div>
+      <div className="adminLogin"
+      style={{position:"absolute",top:"10px",right:"0",}}
+      >
+      <h1>Admin Credentials</h1>
+      <p><strong>Email:</strong> manas12345@gmail.com</p>
+      <p><strong>Password:</strong> manas12345</p>
+     
+
+     </div>
       <div className="outerSignin">
         <div className="logUpper">
           <video
@@ -107,6 +137,7 @@ const Login = () => {
                 helperText={isError && emailError}
                 variant="filled"
                 className="insidemailog w-100"
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -116,11 +147,30 @@ const Login = () => {
                 label="Password"
                 variant="filled"
                 error={isError}
+                value={password}
+            
+
+                type={showPassword ?"text" : "password"}
                 helperText={
                   (isError || customError) && (passwordError || customError)
                 }
                 className="insidepasslog w-100"
                 onChange={(e) => setPassword(e.target.value)}
+
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
             </div>
 
