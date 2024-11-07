@@ -16,6 +16,8 @@ const App = () => {
   useEffect(() => {
     const loadData = async () => {
       await handleLoad();
+
+      
     };
     loadData();
   }, []);
